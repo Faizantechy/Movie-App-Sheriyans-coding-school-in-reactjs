@@ -2,6 +2,8 @@ import React from 'react'
 import SideBar from '../components/SideBar'
 
 import SearchBar from '../components/SearchBar'
+import Header from '../Partials/Header'
+import HorizontalCards from '../Partials/HorizontalCards'
 
 function Home() {
   return (
@@ -11,7 +13,13 @@ function Home() {
           
       <div className="SideBar w-[80%] h-screen">
 
-        <SearchBar/>
+        <SearchBar />
+        
+        <Header />
+
+        <HorizontalCards/>
+        
+
     
         
 
