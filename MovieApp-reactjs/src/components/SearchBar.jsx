@@ -52,7 +52,7 @@ if(searchVal && searchVal.trim()!==''){
       </div>
 
       {searchVal !== "" ? (
-        <div className="suggestions bg-white text-black w-[56%] max-h-[50vh] top-[100px] flex justify-start overflow-hidden flex-col gap-2 overflow-y-auto absolute top-[80px] z-[1000] ">
+        <div className="suggestions bg-white text-black lg:w-[56%] w-[80%] max-h-[50vh] lg:top-[70px]  top-[130px] flex justify-start overflow-hidden flex-col lg:gap-2 gap-5 overflow-y-auto absolute z-[1000] ">
           <Link className=" w-full inline-block p-8 hover:bg-slate-300 mt-5 ">
             {searches.map((item) => {
               return (

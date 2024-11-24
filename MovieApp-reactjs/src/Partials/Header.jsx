@@ -36,7 +36,7 @@ console.log(randomData)
     return (
       
     
-        <div className='Header w-full h-[50vh] mt-2 bg-red-600 relative flex flex-col justify-center items-center' style={{ backgroundImage: `url(${
+        <div className='Header lg:w-full h-[50vh] mt-2 bg-red-600 relative flex flex-col justify-center items-center' style={{ backgroundImage: `url(${
             trending.backdrop_path
               ? `https://image.tmdb.org/t/p/original${trending.backdrop_path || trending.backdrop_path}`
               : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNNLEL-qmmLeFR1nxJuepFOgPYfnwHR56vcw&s"
@@ -47,9 +47,9 @@ console.log(randomData)
        
         
 
-        <div className=" m-[5rem] text-white">
+        <div className=" lg:m-[5rem] m-[3rem]  text-white ">
                     <h1 className='text-3xl font-bold mb-4'>{ trending.title}</h1>
-          <p className='max-w-[70%] text-lg'>
+          <p className='lg:max-w-[70%] w-[85%] text-lg'>
           {trending.overview ? trending.overview.slice(0, 200) : "Loading..."} ...more
           </p>
             
@@ -64,7 +64,7 @@ release_date}</span></i>
             </p>
 
             <button 
-  className="px-6 py-3 rounded-lg bg-[rgb(147,51,234)] text-white font-bold shadow-lg hover:bg-purple-800 transition-all duration-300 transform hover:scale-105 focus:outline-none z-[800] mt-4 ml-2 absolute active:border">
+  className="px-6 py-3 rounded-lg bg-[rgb(147,51,234)] text-white font-bold shadow-lg hover:bg-purple-800 transition-all duration-300 transform hover:scale-105 focus:outline-none z-[800] mt-4 ml-2 absolute active:border lg:flex hidden">
   Watch Trailer
 </button>
                     

@@ -11,7 +11,7 @@ function Home() {
           
           <SideBar />
           
-      <div className="SideBar w-[80%] h-screen overflow-y-auto">
+      <div className="SideBar lg:w-[80%] w-[100%] h-screen overflow-y-auto">
 
         <SearchBar />
         

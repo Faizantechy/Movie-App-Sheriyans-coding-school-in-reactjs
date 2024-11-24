@@ -8,10 +8,10 @@ const Cards = ({data}) => {
           
           {data.map((d) => {
               
-              return <div className="card w-[250px] h-[400px] border shadow-2xl ">
+              return <div className="card lg:w-[250px] lg:h-[400px] h-[500px] border shadow-2xl pb-4 overflow-hidden ">
               <img   src={`https://image.tmdb.org/t/p/original${d.backdrop_path || d.poster_path}`} className='w-full h-[85%] position-center object-cover' alt="" />
               
-                  <h2 className='text-2xl font-bold mt-2 ml-2 text-white'>{ d.title?d.title:'No title'}</h2>
+                  <h2 className='lg:text-2xl text-3xl font-bold mt-4 lg:ml-2 text-center text-white'>{ d.title? d.title:'No title'}</h2>
 
           </div>
           })}

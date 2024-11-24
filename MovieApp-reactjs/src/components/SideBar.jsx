@@ -1,9 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function SideBar() {
 
+  const [isOpen, setIsOpen]=useState(true)
+
+
   const getSearches = async () => {
+
 
 
     const D = await axios.get('/search/multi')
@@ -20,7 +24,15 @@ function SideBar() {
     
     [])
   return (
-    <div className="w-[20%] h-[100vh] p-8 overflow-y-auto  flex-col justify-center border">
+
+    <>
+      
+      <div className="hamburger lg:hidden">
+      <i className="ri-menu-2-line text-2xl font-bold absolute top-5 left-5 hover:text-purple-600 active:scale-[90%]lg:hidden" onClick={()=>setIsOpen(!isOpen)}></i>
+
+      </div>
+
+      <div className={`lg:w-[20%] w-[50%] lg:bg-transparent lg:h-[100vh] h-[80vh] p-8 overflow-y-auto flex-col justify-center border lg:flex lg:static absolute z-[1000] bg-zinc-900 top-[4.4rem] ${isOpen ? 'hidden' : 'visible'} duration-75 lg:translate-x-0`}>
       <h1 className="text-3xl font-bold flex items-center">
         <i className="ri-play-circle-fill text-purple-600 mr-2"></i> SCSDB
       </h1>
@@ -60,6 +72,9 @@ function SideBar() {
         </ul>
       </nav>
     </div>
+
+</>
+
   );
 }
 
