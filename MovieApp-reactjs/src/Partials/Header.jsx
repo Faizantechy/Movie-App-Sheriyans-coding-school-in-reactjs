@@ -36,7 +36,7 @@ console.log(randomData)
     return (
       
     
-        <div className='Header w-full h-[50vh] mt-5 bg-red-600 relative flex flex-col justify-center items-center' style={{ backgroundImage: `url(${
+        <div className='Header w-full h-[50vh] mt-2 bg-red-600 relative flex flex-col justify-center items-center' style={{ backgroundImage: `url(${
             trending.backdrop_path
               ? `https://image.tmdb.org/t/p/original${trending.backdrop_path || trending.backdrop_path}`
               : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNNLEL-qmmLeFR1nxJuepFOgPYfnwHR56vcw&s"
@@ -64,7 +64,7 @@ release_date}</span></i>
             </p>
 
             <button 
-  className="px-6 py-3 rounded-lg bg-[rgb(147,51,234)] text-white font-bold shadow-lg hover:bg-purple-800 transition-all duration-300 transform hover:scale-105 focus:outline-none z-[10000] mt-4 ml-2 absolute">
+  className="px-6 py-3 rounded-lg bg-[rgb(147,51,234)] text-white font-bold shadow-lg hover:bg-purple-800 transition-all duration-300 transform hover:scale-105 focus:outline-none z-[800] mt-4 ml-2 absolute active:border">
   Watch Trailer
 </button>
                     

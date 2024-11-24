@@ -7,11 +7,11 @@ import HorizontalCards from '../Partials/HorizontalCards'
 
 function Home() {
   return (
-      <div className='flex h-[100vh] w-full bg-slate-900 text-white'>
+      <div className='flex h-screen w-full bg-slate-900 text-white'>
           
           <SideBar />
           
-      <div className="SideBar w-[80%] h-screen">
+      <div className="SideBar w-[80%] h-screen overflow-y-auto">
 
         <SearchBar />
         

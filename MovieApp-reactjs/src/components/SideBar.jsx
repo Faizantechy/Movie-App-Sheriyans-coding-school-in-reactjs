@@ -20,7 +20,7 @@ function SideBar() {
     
     [])
   return (
-    <div className="w-[20%] min-h-[100vh] p-4 overflow-y-auto flex flex-col justify-center border">
+    <div className="w-[20%] h-[100vh] p-8 overflow-y-auto  flex-col justify-center border">
       <h1 className="text-3xl font-bold flex items-center">
         <i className="ri-play-circle-fill text-purple-600 mr-2"></i> SCSDB
       </h1>
