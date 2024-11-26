@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function SideBar() {
 
-  const [isOpen, setIsOpen]=useState(true)
+  const [isOpen, setIsOpen]=useState(false)
 
 
   const getSearches = async () => {
@@ -32,7 +32,7 @@ function SideBar() {
 
       </div>
 
-      <div className={`lg:w-[20%] w-[50%] lg:bg-transparent lg:h-[100vh] h-[80vh] p-8 overflow-y-auto flex-col justify-center border lg:flex lg:static absolute z-[1000] bg-zinc-900 top-[4.4rem] ${isOpen ? 'hidden' : 'visible'} duration-75 lg:translate-x-0`}>
+      <div className={`lg:w-[20%] w-[200px] lg:bg-transparent lg:h-[100vh] h-[80vh] p-8 overflow-y-auto flex-col justify-center border lg:flex lg:static absolute z-[1000] bg-zinc-900 top-[4.4rem] ${isOpen ? 'hidden' : 'visible'} duration-75 lg:translate-x-0`}>
       <h1 className="text-3xl font-bold flex items-center">
         <i className="ri-play-circle-fill text-purple-600 mr-2"></i> SCSDB
       </h1>

@@ -47,17 +47,21 @@ console.log(randomData)
        
         
 
-        <div className=" lg:m-[5rem] m-[3rem]  text-white ">
+        <div className=" lg:m-[5rem] m-[3rem] mt-[10rem]  text-white ">
                     <h1 className='text-3xl font-bold mb-4'>{ trending.title}</h1>
-          <p className='lg:max-w-[70%] w-[85%] text-lg'>
+          <p className='lg:max-w-[70%] w-[100%] text-lg hidden lg:visible'>
           {trending.overview ? trending.overview.slice(0, 200) : "Loading..."} ...more
+            </p>
+            
+            <p className='lg:max-w-[70%] w-[100%] text-lg lg:hidden'>
+          {trending.overview ? trending.overview.slice(0, 100) : "Loading..."} ...more
           </p>
             
 
             <p className='text-white flex gap-4 mt-5 items-center'>
-              <i className="ri-volume-down-line text-[25px] font-bold text-yellow-500  ml-2"><span className='text-white'>{ trending.
+              <i className="ri-volume-down-line lg:text-[25px] text-[20px] font-bold text-yellow-500  lg:ml-2 text-nowrap"><span className='text-white'>{ trending.
 release_date}</span></i>
-              <i className="ri-movie-line text-xl font-bold ml-2 text-yellow-500  text-[25px] "><span className='text-white text-[25px]'>{ trending.popularity
+              <i className="ri-movie-line text-xl font-bold lg:ml-2 text-yellow-500  text-[25px] text-nowrap"><span className='text-white lg:text-[25px] text-[20px]'>{ trending.popularity
               }</span></i>
 
 
