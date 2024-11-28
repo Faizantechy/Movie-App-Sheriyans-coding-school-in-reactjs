@@ -49,7 +49,7 @@ console.log(randomData)
 
         <div className=" lg:m-[5rem] m-[3rem] mt-[10rem]  text-white ">
                     <h1 className='text-3xl font-bold mb-4'>{ trending.title}</h1>
-          <p className='lg:max-w-[70%] w-[100%] text-lg hidden lg:visible'>
+          <p className='lg:max-w-[70%] w-[100%] text-lg '>
           {trending.overview ? trending.overview.slice(0, 200) : "Loading..."} ...more
             </p>
             
