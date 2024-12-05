@@ -62,9 +62,11 @@ if(searchVal && searchVal.trim()!==''){
 
       {searchVal !== "" ? (
         <div className="suggestions bg-white text-black lg:w-[56%] w-[80%] max-h-[50vh] lg:top-[70px]  top-[130px] flex justify-start overflow-hidden flex-col lg:gap-2 gap-5 overflow-y-auto absolute z-[2000] ">
-          <Link className=" w-full inline-block p-8 hover:bg-slate-300 mt-5 ">
             {searches.map((item) => {
               return (
+            
+                <Link className=" w-full inline-block p-8 hover:bg-slate-300 mt-5" to={`/${item.media_type || title}/details/${item.id} `}>
+
                 <div className="flex justify-between flex-row-reverse justify-center items-center">
                   <span className="order-1 font-semibold text-xl ">{item.name? item.name:'Title Not Found! '}</span>
                   <img
@@ -76,10 +78,11 @@ if(searchVal && searchVal.trim()!==''){
                     alt=""
                     className="w-[20vh] h-[20vh] rounded-lg mt-4 shadow-2xl"
                   />
-                </div>
+                  </div>
+                  </Link>
+
               );
             })}
-          </Link>
         </div>
       ) : null}
     </div>

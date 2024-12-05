@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import DropDownComp from "../components/DropDownComp";
 import Cards from "../components/Cards";
 import SearchBar from "../components/SearchBar";
+import Loading from "../components/Loading";
 
 const TvShows = () => {
   const navigate = useNavigate();
@@ -17,34 +18,33 @@ const TvShows = () => {
   const getShows = async () => {
     let endPoint = "";
 
-    if (Category === "top-rated") {
-      endPoint = `/movie/top_rated?page=${page}`;
-    } else if (Category === "airing-today") {
+  
+    if (Category === "airing-today") {
       endPoint = `/tv/airing_today?page=${page}`;
-    } else if (Category === "now_playing") {
-      endPoint = `/movie/${Category}page=${page}`;
-    } else if (Category === "popular") {
-      endPoint = `/popular?page={page}
-`;
+  
     } else if (Category === "on-the-air") {
-      endPoint = `/on_the_air?page={page}`;
+      endPoint = `/on_the_air?page=${page}`;
     } else if (Category === "discover") {
-      endPoint = `/discover/tv?with_genres=18&page={page}
+      endPoint = `/discover/tv?with_genres=18&page=${page}
 `;
     } else {
-      endPoint = `/trending/all/day?page=${page}`;
+      endPoint = `/trending/tv/day?page=${page}`;
     }
 
     const { data } = await axios.get(endPoint);
-    console.log(data);
+    const filteredResults = data.results.filter(
+      (tv) => tv.id && tv.name && tv.poster_path 
+    );
+  
 
-    if (data.results.length > 0) {
-      setShows((prevState) => [...prevState, ...data.results]);
+    if (filteredResults.length > 0) {
+      setShows((prevState) => [...prevState, ...filteredResults]);
       setPage(page + 1);
     } else {
       sethasMore(false);
     }
   };
+
 
   const refreshHandler = () => {
     if (Shows.length >= 0) {
@@ -64,6 +64,12 @@ const TvShows = () => {
     refreshHandler();
   }, [page, Category]);
 
+  if (Shows.length === 0) {
+    return <Loading/>
+  }
+
+
+
   return (
     <>
       <div className="w-screen px-5 mt-4 text-white  lg:flex  justify-center items-center ">
@@ -80,16 +86,14 @@ const TvShows = () => {
           </h1>
         </div>
 
-        <SearchBar Data={TvShows} />
+        <SearchBar Data={Shows} />
 
         <div className="drop-downs lg:flex lg:gap-2 gap-5 lg:static absolute right-0 top-[130px] z-[700]">
           <DropDownComp
             title="Category"
             options={[
               "popular",
-              "top-rated",
               "airing-today",
-              "now-playing",
               "on-the-air",
               "Discover",
             ]}
@@ -103,9 +107,9 @@ const TvShows = () => {
         dataLength={Shows.length}
         next={getShows}
         hasMore={hasMore}
-        loader={<h1>Loading....</h1>}
+        loader={``}
       >
-        <Cards data={Shows} />
+        <Cards data={Shows} title='tv' />
       </InfiniteScroll>
     </>
   );

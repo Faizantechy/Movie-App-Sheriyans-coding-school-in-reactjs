@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import DropDownComp from "../components/DropDownComp";
 import Cards from "../components/Cards";
 import SearchBar from "../components/SearchBar";
+import Loading from "../components/Loading";
 
 const People = () => {
   const navigate = useNavigate();
@@ -45,6 +46,13 @@ const People = () => {
     refreshHandler();
   }, [page]);
 
+
+  if (People.length===0) {
+    
+    return <Loading/>
+
+  }
+
   return (
     <>
       <div className="w-screen px-5 mt-4 text-white  lg:flex  justify-center items-center ">
@@ -70,9 +78,9 @@ const People = () => {
         dataLength={People.length}
         next={getPeople}
         hasMore={hasMore}
-        loader={<h1>Loading....</h1>}
+        loader={''}
       >
-        <Cards data={People} />
+        <Cards data={People} title='person' />
       </InfiniteScroll>
     </>
   );

@@ -9,14 +9,13 @@ const Header = () => {
 
     const getTrendingMovies = async () => {
 
-        console.log('Fetching Trending Movies.....')
+        
 
       const { data } = await axios.get('/movie/popular')
       
 
       let randomData = data.results[Math.floor(Math.random() * data.results.length)]
       let RNDATA=data.results[index]
-console.log(randomData)
       
 
         setTrending(randomData)

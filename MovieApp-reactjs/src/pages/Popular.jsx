@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import DropDownComp from "../components/DropDownComp";
 import Cards from "../components/Cards";
 import SearchBar from "../components/SearchBar";
+import Loading from "../components/Loading";
 
 const Popular = () => {
   const navigate = useNavigate();
@@ -54,7 +55,12 @@ const Popular = () => {
 
   useEffect(() => {
     refreshHandler();
-  }, [page,Category]);
+  }, [page, Category]);
+  
+  if (popularMovies.length===0) {
+    
+return <Loading/>
+  }
 
   return  <>
   <div className="w-screen px-5 mt-2 text-white  lg:flex  justify-center items-center ">
@@ -83,7 +89,7 @@ const Popular = () => {
     dataLength={popularMovies.length}
     next={getPopularMovies}
     hasMore={hasMore}
-    loader={<h1>Loading....</h1>}
+    loader={''}
   >
     <Cards data={popularMovies} />
   </InfiniteScroll>

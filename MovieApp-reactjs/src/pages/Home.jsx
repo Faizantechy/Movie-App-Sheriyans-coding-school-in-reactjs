@@ -4,6 +4,8 @@ import SideBar from '../components/SideBar'
 import SearchBar from '../components/SearchBar'
 import Header from '../Partials/Header'
 import HorizontalCards from '../Partials/HorizontalCards'
+import axios from '../utils/axios'
+axios
 
 function Home() {
 
@@ -51,7 +53,7 @@ if(searchVal && searchVal.trim()!==''){
         
         <Header />
 
-        <HorizontalCards/>
+        <HorizontalCards data={searches}/>
         
 
     
