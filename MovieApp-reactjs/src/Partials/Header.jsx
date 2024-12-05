@@ -15,10 +15,19 @@ const Header = () => {
       
 
       let randomData = data.results[Math.floor(Math.random() * data.results.length)]
-      let RNDATA=data.results[index]
+      let RNDATA = data.results[index]
+      
+      const filteredData=randomData.filter(movie => movie.id &&
+        movie.backdrop_path &&
+        movie.poster_path &&
+        movie.title &&
+        movie.original_title
+        
+        
+      )
       
 
-        setTrending(randomData)
+        setTrending(filteredData)
         
 
     }
@@ -42,22 +51,22 @@ const Header = () => {
           })` }}>
         
      
-      <div className="img-title  w-full h-full">
+      <div className="img-title  w-full ">
        
         
 
-        <div className=" lg:m-[5rem] m-[3rem] lg:mt-[10rem]  text-white ">
-                    <h1 className='text-3xl font-bold mb-4'>{ trending.title}</h1>
-          <p className='lg:max-w-[70%] w-[100%] text-lg hidden lg:visible'>
+        <div className=" lg:m-[5rem] m-[3rem] lg:mt-[10rem] flex flex-col justify-center items-center text-white ">
+                    <h1 className='text-3xl lg:text-4xl font-bold mb-4'>{ trending.title}</h1>
+          <p className='lg:max-w-[80%] w-[100%] text-lg lg:visible'>
           {trending.overview ? trending.overview.slice(0, 200) : "Loading..."} ...more
             </p>
             
             <p className='lg:max-w-[70%] w-[100%] text-lg lg:hidden visible'>
-          {trending.overview ? trending.overview.slice(0, 100) : "Loading..."} ...more
+          {trending.overview ? trending.overview.slice(0, 130) : "Loading..."} ...more
           </p>
             
 
-            <p className='text-white flex gap-4 lg:mt-5 items-center lg:mb-0'>
+            <p className='text-white flex gap-4 lg:mt-5 items-center mt-8 lg:mb-0'>
               <i className="ri-volume-down-line lg:text-[25px] text-[20px] font-bold text-yellow-500  lg:ml-2 text-nowrap"><span className='text-white'>{ trending.
 release_date}</span></i>
               <i className="ri-movie-line text-xl font-bold lg:ml-2 text-yellow-500  text-[25px] text-nowrap"><span className='text-white lg:text-[25px] text-[20px]'>{ trending.popularity

@@ -88,7 +88,7 @@ const Movies = () => {
 
         <SearchBar Data={Movies} />
 
-        <div className="drop-downs lg:flex lg:gap-2 gap-5 lg:static absolute right-0 top-[130px] z-[700]">
+        <div className="drop-downs lg:flex lg:gap-2 gap-5 lg:static absolute right-0 top-[130px] z-[200000]">
           <DropDownComp
             title="Category"
             options={["movie", "top-rated", "airing-today", "now-playing"]}

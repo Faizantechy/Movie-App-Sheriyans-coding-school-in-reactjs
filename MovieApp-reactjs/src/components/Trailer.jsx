@@ -24,7 +24,7 @@ const Trailer = () => {
            
             </Link>
 
-          <ReactPlayer url={`https://www.youtube.com/watch?v=${ytVideo.key}`} height={500} width={1200}/>
+          <ReactPlayer url={`https://www.youtube.com/watch?v=${ytVideo.key}`} height={500} width={1200} controls/>
 
     </div>
   ): <NotFound/>

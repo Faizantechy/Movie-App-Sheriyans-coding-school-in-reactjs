@@ -13,6 +13,8 @@ const TvDetails = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const { info } = useSelector((state) => state.movieInfo);
+  
+  
   const Value = false;
 
   useEffect(() => {
@@ -25,6 +27,7 @@ const TvDetails = () => {
   if (!info || !info.detail) {
     return <Loading />;
   }
+
 
   return (
     <div
@@ -137,6 +140,7 @@ const TvDetails = () => {
           </Link>
         </div>
       </div>
+
 
       <div className="mt-10 px-4 md:px-10">
         <HorizZontalCards

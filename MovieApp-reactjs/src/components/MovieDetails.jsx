@@ -153,7 +153,9 @@ const MovieDetails = () => {
             <i className="ri-google-play-fill"></i> Watch Trailer
           </Link>
         </div>
-        </div>
+      </div>
+      
+  
 
       <div className="mt-10 px-4 md:px-10">
         <HorizZontalCards

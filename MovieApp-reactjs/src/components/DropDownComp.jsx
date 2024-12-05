@@ -1,6 +1,9 @@
+
+
+
 const DropDownComp = ({ selectVal, setSelectVal, title, options }) => {
   return (
-    <div>
+    <div className="z-[10000]">
       <select
         className="text-black w-[150px] font-bold outline-none border-none p-2"
         value={selectVal}
