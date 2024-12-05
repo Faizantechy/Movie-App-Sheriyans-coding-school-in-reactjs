@@ -66,7 +66,7 @@ const Popular = () => {
       <h1 className="text-2xl font-semibold  ">Popular</h1>
     </div>
 
-    <SearchBar />
+    <SearchBar Data={popularMovies} />
 
     <div className="drop-downs lg:flex lg:gap-2 gap-5 lg:static absolute right-0 top-[130px] z-[700]">
    

@@ -60,7 +60,8 @@ const Trending = () => {
 
   return (
     <>
-      <div className="w-screen px-2 mt-2 text-white  lg:flex  justify-center items-center ">
+     
+     <div className="w-screen px-2 mt-2 text-white  lg:flex  justify-center items-center ">
         <div className="title-heading flex gap-1 items-center lg:justify-start justify-center">
           <i
             className="ri-arrow-right-line text-3xl  font-bold hover:text-[rgb(147,51,234)] active:scale-[90%]"
@@ -69,7 +70,7 @@ const Trending = () => {
           <h1 className="text-2xl font-semibold  ">Trending</h1>
         </div>
 
-        <SearchBar />
+        <SearchBar Data={trendingMovies} />
 
         <div className="drop-downs lg:flex lg:gap-2 gap-5 lg:static absolute right-0 top-[130px] z-[700]">
           <DropDownComp

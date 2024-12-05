@@ -80,7 +80,7 @@ const TvShows = () => {
           </h1>
         </div>
 
-        <SearchBar />
+        <SearchBar Data={TvShows} />
 
         <div className="drop-downs lg:flex lg:gap-2 gap-5 lg:static absolute right-0 top-[130px] z-[700]">
           <DropDownComp

@@ -3,14 +3,23 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "../utils/axios";
 
-function SearchBar() {
+function SearchBar({Data}) {
   const [searchVal, setSearchVal] = useState("");
 
   const [searches, setSearches] = useState([]);
 
   const getSearches = async () => {
-    const { data } = await axios.get(`/search/multi?query=${searchVal}`);
-    setSearches(data.results);
+    try {
+      const response = await axios.get(`/search/multi?query=${searchVal}`);
+      const apiResults = response.data.results || [];
+
+      const combinedData = [...Data, ...apiResults];
+
+      setSearches(combinedData);
+    } catch (error) {
+      console.error("Error fetching search results:", error);
+      setSearches([...Data]); 
+    }
   };
 
   useEffect(() => {
@@ -52,7 +61,7 @@ if(searchVal && searchVal.trim()!==''){
       </div>
 
       {searchVal !== "" ? (
-        <div className="suggestions bg-white text-black lg:w-[56%] w-[80%] max-h-[50vh] lg:top-[70px]  top-[130px] flex justify-start overflow-hidden flex-col lg:gap-2 gap-5 overflow-y-auto absolute z-[1000] ">
+        <div className="suggestions bg-white text-black lg:w-[56%] w-[80%] max-h-[50vh] lg:top-[70px]  top-[130px] flex justify-start overflow-hidden flex-col lg:gap-2 gap-5 overflow-y-auto absolute z-[2000] ">
           <Link className=" w-full inline-block p-8 hover:bg-slate-300 mt-5 ">
             {searches.map((item) => {
               return (

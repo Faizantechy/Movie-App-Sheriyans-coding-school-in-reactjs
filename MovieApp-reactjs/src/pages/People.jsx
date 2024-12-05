@@ -15,30 +15,9 @@ const People = () => {
   const [hasMore, sethasMore] = useState(true);
 
   const getPeople = async () => {
-//     let endPoint = "";
-
-//     if (Category === "top-rated") {
-//       endPoint = `/movie/top_rated?page=${page}`;
-//     } else if (Category === "airing-today") {
-//       endPoint = `/tv/airing_today?page=${page}`;
-//     } else if (Category === "now_playing") {
-//       endPoint = `/movie/${Category}page=${page}`;
-//     } else if (Category === "popular") {
-//       endPoint = `/popular?page={page}
-// `;
-//     } else if (Category === "on-the-air") {
-//       endPoint = `/on_the_air?page={page}`;
-//     } else if (Category === "discover") {
-//       endPoint = `/discover/tv?with_genres=18&page={page}
-// `;
-//     } else {
-//       endPoint = `/trending/all/day?page=${page}`;
-//     }
-
-    const { data } = await axios.get(`/person/changes`);
-      console.log(data.results.profile_path);
+    const { data } = await axios.get(`/person/popular?page=${page}`);
+    console.log(data.results);
     
-
     if (data.results.length > 0) {
       setPeople((prevState) => [...prevState, ...data.results]);
       setPage(page + 1);
@@ -46,6 +25,7 @@ const People = () => {
       sethasMore(false);
     }
   };
+  
 
   const refreshHandler = () => {
     if (People.length >= 0) {
@@ -81,7 +61,7 @@ const People = () => {
           </h1>
         </div>
 
-        <SearchBar />
+        <SearchBar Data={People} />
 
     
       </div>

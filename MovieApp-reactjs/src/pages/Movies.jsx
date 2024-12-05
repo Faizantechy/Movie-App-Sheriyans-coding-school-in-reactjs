@@ -13,7 +13,7 @@ const Movies = () => {
   const [Category, setCatgory] = useState("");
   const [page, setPage] = useState(3);
     const [hasMore, sethasMore] = useState(true);
-    const [rating, setrating] = useState('')
+    const [rating, setrating] = useState([])
 
   const getMovies = async () => {
     let endPoint = "";
@@ -74,7 +74,7 @@ const Movies = () => {
                   <h1 className="text-2xl font-semibold  flex gap-2 items-center ">Movies <span className="text-[rgb(147,51,234)] text-[20px] text-nowrap">{Category.length !==0? (Category) :''}</span></h1>
         </div>
 
-        <SearchBar />
+        <SearchBar Data={Movies} />
 
         <div className="drop-downs lg:flex lg:gap-2 gap-5 lg:static absolute right-0 top-[130px] z-[700]">
           <DropDownComp
@@ -92,7 +92,7 @@ const Movies = () => {
         hasMore={hasMore}
         loader={<h1>Loading....</h1>}
       >
-        <Cards data={Movies} Rating={rating} />
+        <Cards data={Movies}/>
       </InfiniteScroll>
     </>
   );

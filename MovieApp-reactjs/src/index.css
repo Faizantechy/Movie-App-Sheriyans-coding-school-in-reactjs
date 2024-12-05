@@ -104,3 +104,10 @@ body::-webkit-scrollbar{
   transform: scale(90%)
   ;
 }
+
+h1{
+
+  font-size: 5rem;
+  text-align: center;
+  
+}
