@@ -66,7 +66,7 @@ function HorizontalCards({ title, data, Value }) {
                   className="w-full h-[200px] object-cover"
                 />
                 <h2 className="text-xl font-bold ml-4 mt-2">
-                  {item.name ? item.name || item.original_title : "Movie!"}
+                  {item.name ? item.name || item.original_title ||item.title : "Movie!"}
                 </h2>
                 <p className="p-2">
                   {item.overview

@@ -67,15 +67,29 @@ const MovieDetails = () => {
             </a>
           </nav>
 
-          <div className="w-full md:w-[80%] h-[300px] mt-4 shadow-2xl border-5">
+
+
+{/* This is the card part */}
+          <div className="lg:w-full md:w-[80%] lg:h-auto h-[300px] w-[280px] lg:mt-4 lg:mb-0  shadow-2xl border-5 border-red-600 lg:ml-0  card: space-x-5 ">
             <img
               src={`https://image.tmdb.org/t/p/original${info.detail.backdrop_path}`}
               alt=""
-              className="w-full h-full object-cover rounded-md"
+              className="w-full h-[85%] object-cover rounded-md"
             />
+
+
+
+            
+            <br />
+            <br />
+
+
           </div>
 
-          <div className="mt-5 lg:flex gap-2">
+          {/* This is the card part */}
+
+
+          <div className="mt-5 flex flex-col lg:flex-row gap-2">
             <h1 className="text-2xl font-semibold mb-2">Available to rent:</h1>
             <div className="flex flex-wrap gap-2">
               {info.watchProviders?.results?.US?.rent.map((m) => (
@@ -87,9 +101,9 @@ const MovieDetails = () => {
                 />
               ))}
             </div>
-          </div>
+          </div> 
 
-          <div className="mt-5 lg:flex gap-2">
+          <div className="mt-5 lg:flex gap-2 flex-col lg:flex-row ">
             <h1 className="text-2xl font-semibold mb-2">Available to buy:</h1>
             <div className="flex flex-wrap gap-2">
               {info.watchProviders?.results?.US?.buy.map((m) => (
@@ -102,26 +116,29 @@ const MovieDetails = () => {
               ))}
             </div>
           </div>
+
         </div>
 
-        <div className="w-full md:w-1/2 md:pl-6">
-          <h2 className="text-4xl font-bold">
-            {info.detail.original_title}{" "}
-            <span className="font-semibold text-zinc-400 text-2xl">
-              ({info.detail.release_date.split("-")[0]})
-            </span>
-          </h2>
-          <div className="flex flex-wrap gap-4 mt-2">
+        <div className="w-full md:w-1/2 md:pl-6 lg:mt-12">
+        <h2 className="text-4xl font-bold block">
+  {info.detail.original_title || info.title || info.detail.original_title}{" "}
+  <span className="font-semibold text-zinc-400 text-2xl">
+    ({info.detail.release_date.split("-")[0]})
+  </span>
+</h2>
+
+
+          <div className="flex flex-wrap gap-4 mt-2 lg:justify-start justify-center">
             <span className="rounded-full bg-[rgb(147,51,234)] w-[55px] h-[55px] flex justify-center items-center font-bold">
               {info.detail.vote_average}
             </span>
 
-            <div className="date-runtime flex items-center">
+            <div className="date-runtime flex items-center ">
             <span className="text-xl text-zinc-400 font-bold">{info.detail.release_date}</span>
               <span className="text-xl text-zinc-400 font-bold">{info.detail.runtime} min</span>
               </div>
           </div>
-          <div className="mt-6">
+          <div className="mt-6 lg:text-left text-center ">
             <h3 className="text-3xl font-bold">Overview</h3>
             <p className="text-zinc-300 leading-6">{info.detail.overview}</p>
             <h4 className="text-xl font-semibold text-[rgb(147,51,234)] mt-4">
@@ -130,13 +147,13 @@ const MovieDetails = () => {
           </div>
 
           <Link
-            className="mt-5 inline-block bg-[rgb(147,51,234)] px-4 py-2 rounded-lg hover:scale-90 transition-transform"
+            className="mt-5 inline-block bg-[rgb(147,51,234)] lg:px-4 lg:py-2 rounded-lg px-[15%] py-3 hover:scale-90 transition-transform lg:ml-0 ml-[12%] text-xl  "
             to={`${pathname}/trailer`}
           >
             <i className="ri-google-play-fill"></i> Watch Trailer
           </Link>
         </div>
-      </div>
+        </div>
 
       <div className="mt-10 px-4 md:px-10">
         <HorizZontalCards

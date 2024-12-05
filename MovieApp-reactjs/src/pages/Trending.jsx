@@ -16,6 +16,8 @@ const Trending = () => {
   const [page, setPage] = useState(1);
   const [hasMore, sethasMore] = useState(true);
 
+  const Value = true;
+
   const TrendingMoviesCall = async () => {
     let endPoint = "";
 
@@ -77,13 +79,14 @@ const Trending = () => {
             title="Duration"
             options={["week", "day", "hour", "year"]}
             selectVal={timeFrame}
-            setSelectVal={setTimeFrame}
+            setSelectVal={setTimeFrame} 
           />
           <DropDownComp
             title="Category"
             options={["tv", "movie", "top-rated", "airing-today", "drama"]}
             selectVal={selectVal} // Pass the current value
             setSelectVal={setSelectVal} // Pass the setter function
+           
           />
         </div>
       </div>

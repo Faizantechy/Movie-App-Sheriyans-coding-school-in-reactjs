@@ -35,7 +35,7 @@ const Header = () => {
     return (
       
     
-        <div className='Header lg:w-full h-[50vh] mt-2 bg-red-600 relative flex flex-col justify-center items-center' style={{ backgroundImage: `url(${
+        <div className='Header lg:w-full h-[50vh] mt-2 overflow-x-auto bg-red-600 relative flex flex-col justify-center items-center' style={{ backgroundImage: `url(${
             trending.backdrop_path
               ? `https://image.tmdb.org/t/p/original${trending.backdrop_path || trending.backdrop_path}`
               : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNNLEL-qmmLeFR1nxJuepFOgPYfnwHR56vcw&s"
@@ -46,18 +46,18 @@ const Header = () => {
        
         
 
-        <div className=" lg:m-[5rem] m-[3rem] mt-[10rem]  text-white ">
+        <div className=" lg:m-[5rem] m-[3rem] lg:mt-[10rem]  text-white ">
                     <h1 className='text-3xl font-bold mb-4'>{ trending.title}</h1>
-          <p className='lg:max-w-[70%] w-[100%] text-lg '>
+          <p className='lg:max-w-[70%] w-[100%] text-lg hidden lg:visible'>
           {trending.overview ? trending.overview.slice(0, 200) : "Loading..."} ...more
             </p>
             
-            <p className='lg:max-w-[70%] w-[100%] text-lg lg:hidden'>
+            <p className='lg:max-w-[70%] w-[100%] text-lg lg:hidden visible'>
           {trending.overview ? trending.overview.slice(0, 100) : "Loading..."} ...more
           </p>
             
 
-            <p className='text-white flex gap-4 mt-5 items-center'>
+            <p className='text-white flex gap-4 lg:mt-5 items-center lg:mb-0'>
               <i className="ri-volume-down-line lg:text-[25px] text-[20px] font-bold text-yellow-500  lg:ml-2 text-nowrap"><span className='text-white'>{ trending.
 release_date}</span></i>
               <i className="ri-movie-line text-xl font-bold lg:ml-2 text-yellow-500  text-[25px] text-nowrap"><span className='text-white lg:text-[25px] text-[20px]'>{ trending.popularity

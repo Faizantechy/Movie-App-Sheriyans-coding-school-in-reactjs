@@ -35,8 +35,7 @@ const Movies = () => {
         movie.media_type === "movie" &&
         movie.id &&
         movie.backdrop_path &&
-        movie.poster_path &&
-      movie.videos.Trailer
+        movie.poster_path
     );
 
     setrating(filteredMovies.vote_average);
@@ -103,7 +102,7 @@ const Movies = () => {
         dataLength={Movies.length}
         next={getMovies}
         hasMore={hasMore}
-        loader={<h1>Loading....</h1>}
+        loader={``}
       >
         <Cards data={Movies} title="movie" />
       </InfiniteScroll>

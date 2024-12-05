@@ -13,6 +13,7 @@ function Home() {
   const [searchVal, setSearchVal] = useState("");
 
   const [searches, setSearches] = useState([]);
+  const Value = true;
 
   const getSearches = async () => {
     try {
@@ -53,7 +54,7 @@ if(searchVal && searchVal.trim()!==''){
         
         <Header />
 
-        <HorizontalCards data={searches}/>
+        <HorizontalCards data={searches} Value={ Value} />
         
 
     

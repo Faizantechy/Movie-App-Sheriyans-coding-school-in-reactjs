@@ -124,12 +124,15 @@ h1{
   width: 100%;
   height: 100%;
   position: absolute;
-  background: rgba(0, 0, 0, 0.6); /* Black overlay with 60% opacity */
+  background: rgba(0, 0, 0, 0.85); /* Black overlay with 85% opacity */
   top: 0;
   left: 0;
-  z-index: -2000; /* Keep it behind the text */
-  backdrop-filter: blur(10px); /* Adds a blur effect */
+  z-index: -1; /* Ensure it sits behind the content */
+  backdrop-filter: blur(15px); /* Stronger blur for a sleek effect */
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 1); /* Adds depth with inner shadow */
+  border-radius: 8px; /* Adds a subtle rounding to make it smooth */
 }
+
 
 
 
