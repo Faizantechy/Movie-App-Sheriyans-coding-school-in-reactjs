@@ -18,7 +18,22 @@ const People = () => {
   const getPeople = async () => {
     const { data } = await axios.get(`/person/popular?page=${page}`);
     console.log(data.results);
-    
+
+    // const filteredData = data.results.filter(
+    //   (person) =>
+    //     person.id &&
+    //     person.original_title &&
+    //     person.title &&
+    //     person.biography &&
+    //     person.birthday &&
+    //     person.deathday &&
+    //     person.gender &&
+    //     person.known_for_department &&
+    //     person.place_of_birth &&
+    //     person.name &&
+    //     person.profile_path
+    // );
+
     if (data.results.length > 0) {
       setPeople((prevState) => [...prevState, ...data.results]);
       setPage(page + 1);
@@ -26,7 +41,6 @@ const People = () => {
       sethasMore(false);
     }
   };
-  
 
   const refreshHandler = () => {
     if (People.length >= 0) {
@@ -46,11 +60,8 @@ const People = () => {
     refreshHandler();
   }, [page]);
 
-
-  if (People.length===0) {
-    
-    return <Loading/>
-
+  if (People.length === 0) {
+    return <Loading />;
   }
 
   return (
@@ -70,17 +81,15 @@ const People = () => {
         </div>
 
         <SearchBar Data={People} />
-
-    
       </div>
 
       <InfiniteScroll
         dataLength={People.length}
         next={getPeople}
         hasMore={hasMore}
-        loader={''}
+        loader={""}
       >
-        <Cards data={People} title='person' />
+        <Cards data={People} title="person" />
       </InfiniteScroll>
     </>
   );

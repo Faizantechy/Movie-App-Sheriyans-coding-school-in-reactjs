@@ -31,6 +31,8 @@ const Popular = () => {
     const { data } = await axios.get(endPoint);
     console.log(data);
 
+    // const filteredData= data.results.filter((movie)=> movie.id && movie.backdrop_path &&movie.poster_path && movie.title &&movie.name &&movie.original_title &&movie.videos.trailer)
+
     if (data.results.length > 0) {
       setPopularMovies((prevState) => [...prevState, ...data.results]);
       setPage(page + 1);

@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = ({
     
-    info:[]
+    info:{}
 
 })
 
@@ -15,8 +15,9 @@ const personSlice = createSlice({
 
     loadperson: (state, action) => {
             
+                        
+            state.info = action.payload
             
-            state.info=action.payload
             
     },
         

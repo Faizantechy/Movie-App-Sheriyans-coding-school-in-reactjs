@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 const Header = () => {
 
     const [trending, setTrending] = useState([])
-    const [index,setIndex]=useState(4)
+  const [index, setIndex] = useState(4)
 
 
     const getTrendingMovies = async () => {
@@ -17,17 +17,17 @@ const Header = () => {
       let randomData = data.results[Math.floor(Math.random() * data.results.length)]
       let RNDATA = data.results[index]
       
-      const filteredData=randomData.filter(movie => movie.id &&
-        movie.backdrop_path &&
-        movie.poster_path &&
-        movie.title &&
-        movie.original_title
+      // const filteredData=randomData.filter(movie => movie.id &&
+      //   movie.backdrop_path &&
+      //   movie.poster_path &&
+      //   movie.title &&
+      //   movie.original_title
         
         
-      )
+      // )
       
 
-        setTrending(filteredData)
+        setTrending(RNDATA)
         
 
     }
@@ -57,14 +57,10 @@ const Header = () => {
 
         <div className=" lg:m-[5rem] m-[3rem] lg:mt-[10rem] flex flex-col justify-center items-center text-white ">
                     <h1 className='text-3xl lg:text-4xl font-bold mb-4'>{ trending.title}</h1>
-          <p className='lg:max-w-[80%] w-[100%] text-lg lg:visible'>
-          {trending.overview ? trending.overview.slice(0, 200) : "Loading..."} ...more
-            </p>
-            
-            <p className='lg:max-w-[70%] w-[100%] text-lg lg:hidden visible'>
-          {trending.overview ? trending.overview.slice(0, 130) : "Loading..."} ...more
-          </p>
-            
+                    <p className="lg:max-w-[80%] w-[100%] text-lg  block">
+  {trending.overview ? trending.overview.slice(0, 160) : "Loading..."} ...more
+</p>
+
 
             <p className='text-white flex gap-4 lg:mt-5 items-center mt-8 lg:mb-0'>
               <i className="ri-volume-down-line lg:text-[25px] text-[20px] font-bold text-yellow-500  lg:ml-2 text-nowrap"><span className='text-white'>{ trending.
