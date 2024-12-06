@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react";
 function HorizontalCards({ title, data, Value }) {
   const [selectVal, setSelectVal] = useState("tv");
   const [results, setResults] = useState([]);
+  const [page, setPage] = useState(5)
 
   let combinedArrays = [...data, ...results];
   const dropDownData = async () => {
@@ -22,15 +23,17 @@ function HorizontalCards({ title, data, Value }) {
       endPoints = "/trending/all/day";
     }
 
-    // Ensure this part runs only after determining the endpoint
-    const { data } = await axios.get(`${endPoints}`);
+    const { data } = await axios.get(`${endPoints}?page=${page}`);
+
     setResults(data.results);
-    console.log(results);
+
   };
 
+
+
   useEffect(() => {
-    console.log(selectVal);
     dropDownData();
+
   }, [selectVal]);
 
   return (

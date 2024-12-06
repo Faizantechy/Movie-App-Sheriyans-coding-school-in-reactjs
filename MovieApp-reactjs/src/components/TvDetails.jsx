@@ -6,15 +6,13 @@ import Loading from "./Loading";
 import { removeMovie } from "../reducers/MovieSlice";
 import HorizZontalCards from '../Partials/HorizontalCards';
 
-
 const TvDetails = () => {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const { id } = useParams();
   const { info } = useSelector((state) => state.movieInfo);
-  
-  
+
   const Value = false;
 
   useEffect(() => {
@@ -28,10 +26,9 @@ const TvDetails = () => {
     return <Loading />;
   }
 
-
   return (
     <div
-      className="w-full h-[100vh] text-white bg-cover bg-no-repeat bg-center movie-details overflow-auto relative"
+      className="w-full h-auto text-white bg-cover bg-no-repeat bg-center movie-details overflow-auto relative"
       style={{
         backgroundImage: `url(${
           info.detail.backdrop_path
@@ -42,12 +39,12 @@ const TvDetails = () => {
         })`,
       }}
     >
-      <div className="flex flex-wrap md:flex-nowrap gap-4 px-4 md:px-10 pt-5">
-        <div className="w-full md:w-1/2">
-          <nav className="text-zinc-100 text-xl font-bold flex gap-6 items-center py-2">
+      <div className="flex flex-wrap gap-4 px-4 md:px-10 pt-5">
+        <div className="w-full lg:w-1/2">
+          <nav className="text-zinc-100 text-lg sm:text-xl font-bold flex gap-4 sm:gap-6 items-center py-2">
             <Link>
               <i
-                className="ri-arrow-right-line text-3xl font-bold hover:text-[rgb(147,51,234)] active:scale-[90%]"
+                className="ri-arrow-right-line text-2xl sm:text-3xl font-bold hover:text-[rgb(147,51,234)] active:scale-[90%]"
                 onClick={() => navigate(-1)}
               ></i>
             </Link>
@@ -70,7 +67,7 @@ const TvDetails = () => {
             </a>
           </nav>
 
-          <div className="w-full md:w-[80%] h-[300px] mt-4 shadow-2xl border-5">
+          <div className="w-full lg:w-[80%] h-[250px] sm:h-[300px] mt-4 shadow-2xl border-5">
             <img
               src={`https://image.tmdb.org/t/p/original${info.detail.backdrop_path}`}
               alt=""
@@ -79,13 +76,13 @@ const TvDetails = () => {
           </div>
 
           <div className="mt-5 lg:flex gap-2">
-            <h1 className="text-2xl font-semibold mb-2">Available to rent:</h1>
+            <h1 className="text-lg sm:text-2xl font-semibold mb-2">Available to rent:</h1>
             <div className="flex flex-wrap gap-2">
               {info.watchProviders?.results?.US?.rent.map((m) => (
                 <img
                   src={`https://image.tmdb.org/t/p/original${m.logo_path}`}
                   alt="provider logo"
-                  className="w-[30px]"
+                  className="w-[20px] sm:w-[30px]"
                   key={m.provider_id}
                 />
               ))}
@@ -93,13 +90,13 @@ const TvDetails = () => {
           </div>
 
           <div className="mt-5 lg:flex gap-2">
-            <h1 className="text-2xl font-semibold mb-2">Available to buy:</h1>
+            <h1 className="text-lg sm:text-2xl font-semibold mb-2">Available to buy:</h1>
             <div className="flex flex-wrap gap-2">
               {info.watchProviders?.results?.US?.buy.map((m) => (
                 <img
                   src={`https://image.tmdb.org/t/p/original${m.logo_path}`}
                   alt="provider logo"
-                  className="w-[30px]"
+                  className="w-[20px] sm:w-[30px]"
                   key={m.provider_id}
                 />
               ))}
@@ -107,33 +104,33 @@ const TvDetails = () => {
           </div>
         </div>
 
-        <div className="w-full md:w-1/2 md:pl-6">
-          <h2 className="text-4xl font-bold">
+        <div className="w-full lg:w-1/2 lg:pl-6">
+          <h2 className="text-2xl sm:text-4xl font-bold">
             {info.detail.original_title}{" "}
-            <span className="font-semibold text-zinc-400 text-2xl">
+            <span className="font-semibold text-zinc-400 text-lg sm:text-2xl">
               ({info.detail.release_date.split("-")[0]})
             </span>
           </h2>
           <div className="flex flex-wrap gap-4 mt-2">
-            <span className="rounded-full bg-[rgb(147,51,234)] w-[55px] h-[55px] flex justify-center items-center font-bold">
+            <span className="rounded-full bg-[rgb(147,51,234)] w-[40px] sm:w-[55px] h-[40px] sm:h-[55px] flex justify-center items-center font-bold">
               {info.detail.vote_average}
             </span>
 
             <div className="date-runtime flex items-center">
-            <span className="text-xl text-zinc-400 font-bold">{info.detail.release_date}</span>
-              <span className="text-xl text-zinc-400 font-bold">{info.detail.runtime} min</span>
-              </div>
+              <span className="text-sm sm:text-xl text-zinc-400 font-bold">{info.detail.release_date}</span>
+              <span className="text-sm sm:text-xl text-zinc-400 font-bold">{info.detail.runtime} min</span>
+            </div>
           </div>
           <div className="mt-6">
-            <h3 className="text-3xl font-bold">Overview</h3>
-            <p className="text-zinc-300 leading-6">{info.detail.overview}</p>
-            <h4 className="text-xl font-semibold text-[rgb(147,51,234)] mt-4">
+            <h3 className="text-lg sm:text-3xl font-bold">Overview</h3>
+            <p className="text-zinc-300 leading-6 text-sm sm:text-base">{info.detail.overview}</p>
+            <h4 className="text-sm sm:text-xl font-semibold text-[rgb(147,51,234)] mt-4">
               {info.detail.genres.map((genre) => genre.name).join(", ")}
             </h4>
           </div>
 
           <Link
-            className="mt-5 inline-block bg-[rgb(147,51,234)] px-4 py-2 rounded-lg hover:scale-90 transition-transform"
+            className="mt-5 lg:ml-0 ml-10 inline-block bg-[rgb(147,51,234)] lg:px-3 px-12 sm:px-8 py-2 rounded-lg hover:scale-90 transition-transform"
             to={`${pathname}/trailer`}
           >
             <i className="ri-google-play-fill"></i> Watch Trailer
@@ -141,18 +138,14 @@ const TvDetails = () => {
         </div>
       </div>
 
-
       <div className="mt-10 px-4 md:px-10">
         <HorizZontalCards
           data={info.recommendations?.length > 0 ? info.recommendations : info.similar || []} title='Recommendations'
-          Value={ Value} />
+          Value={Value} />
       </div>
 
-      <Outlet/>
-
-
+      <Outlet />
     </div>
-    
   );
 };
 

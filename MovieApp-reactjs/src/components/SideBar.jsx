@@ -30,7 +30,7 @@ function SideBar() {
         } duration-300 ease-in-out lg:translate-x-0`}
       >
         <h1 className="text-3xl font-bold flex items-center">
-          <i className="ri-play-circle-fill text-purple-600 mr-2"></i> SCSDB
+          <i className="ri-play-circle-fill text-purple-600 mr-2"></i> Entertain
         </h1>
 
         <nav>

@@ -4,6 +4,7 @@ import SearchBar from "../components/SearchBar";
 import DropDownComp from "../components/DropDownComp";
 import Cards from "../components/Cards";
 import axios from "../utils/axios";
+import Loading from '../components/Loading'
 
 import InfiniteScroll from "react-infinite-scroll-component";
 
@@ -60,6 +61,13 @@ const Trending = () => {
     refreshHandler();
   }, [page, selectVal, timeFrame]);
 
+
+  if (trendingMovies.length === 0) {
+    
+    return <Loading/>
+
+  }
+
   return (
     <>
      
@@ -84,8 +92,8 @@ const Trending = () => {
           <DropDownComp
             title="Category"
             options={["tv", "movie", "top-rated", "airing-today", "drama"]}
-            selectVal={selectVal} // Pass the current value
-            setSelectVal={setSelectVal} // Pass the setter function
+            selectVal={selectVal}
+            setSelectVal={setSelectVal}
            
           />
         </div>
@@ -95,7 +103,7 @@ const Trending = () => {
         dataLength={trendingMovies.length}
         next={TrendingMoviesCall}
         hasMore={hasMore}
-        loader={<h1>Loading....</h1>}
+        loader={``}
       >
         <Cards data={trendingMovies} />
       </InfiniteScroll>
