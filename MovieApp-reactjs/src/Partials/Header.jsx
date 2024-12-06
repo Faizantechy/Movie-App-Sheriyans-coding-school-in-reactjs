@@ -76,7 +76,7 @@ const Header = () => {
                     </div> */}
         </div>
         <Link to={`/movie/details/${trending.id}`}
-  className="px-6 py-3 rounded-lg bg-[rgb(147,51,234)] text-white font-bold shadow-lg hover:bg-purple-800 transition-all duration-300 transform hover:scale-105 focus:outline-none z-[800]  lg:mt-2 ml-2 lg:mb-5 mb:-12 absolute lg:bottom-0 top-0 active:border lg:flex ">
+  className="px-6 py-3 rounded-lg bg-[rgb(147,51,234)] text-white font-bold shadow-lg hover:bg-purple-800 transition-all duration-300 transform hover:scale-105 focus:outline-none z-[800]  lg:mt-2 ml-2 mb-5 absolute hidden lg:visible  active:border lg:flex ">
   Stream!
 </Link>
       </div>
