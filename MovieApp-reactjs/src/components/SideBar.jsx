@@ -30,7 +30,7 @@ function SideBar() {
         } duration-300 ease-in-out lg:translate-x-0 text-nowrap`}
       >
         <h1 className="lg:text-3xl text-2xl font-bold flex items-center">
-          <i className="ri-play-circle-fill text-[rgb(173, 216, 230)] mr-2"></i> Entertain
+          <i className="ri-play-circle-fill text-[rgb(255, 255, 200))] mr-2"></i> Entertain
         </h1>
 
         <nav>
