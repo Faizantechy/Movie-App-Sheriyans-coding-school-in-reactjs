@@ -30,7 +30,7 @@ function SideBar() {
         } duration-300 ease-in-out lg:translate-x-0 text-nowrap`}
       >
         <h1 className="lg:text-3xl text-2xl font-bold flex items-center">
-          <i className="ri-play-circle-fill text-purple-600 mr-2"></i> Entertain
+          <i className="ri-play-circle-fill text-[rgb(173, 216, 230)] mr-2"></i> Entertain
         </h1>
 
         <nav>
@@ -41,7 +41,7 @@ function SideBar() {
               to="/trending"
               className="hover:bg-purple-600 p-2 rounded-lg duration-75 active:scale-[90%]"
             >
-              <i className="ri-fire-fill mr-2"></i> Trending
+              <i className="ri-fire-fill mr-2 text-yellow-400"></i> Trending
             </Link>
             <Link
               to="/popular"
