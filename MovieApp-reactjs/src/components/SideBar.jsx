@@ -16,7 +16,7 @@ function SideBar() {
   return (
     <>
       {/* Hamburger Icon */}
-      <div className="hamburger lg:hidden">
+      <div className="hamburger lg:hidden bg-[rgb(15,23,42)]">
         <i
           className="ri-menu-2-line text-2xl font-bold absolute top-5 left-5 hover:text-purple-600 active:scale-[90%]"
           onClick={() => setIsOpen(!isOpen)}
