@@ -25,12 +25,12 @@ function SideBar() {
 
       {/* Sidebar */}
       <div
-        className={`lg:w-[20%] w-[200px] lg:bg-transparent lg:h-[100vh] h-[80vh] lg:p-8 px-3 py-4 overflow-y-auto flex-col justify-center border lg:flex lg:static absolute z-[1000] bg-zinc-900 top-4rem] ${
+        className={`lg:w-[20%] w-[200px] lg:bg-transparent lg:h-[100vh] h-[80vh] lg:p-8 px-3 py-4 overflow-y-auto flex-col justify-center border lg:flex lg:static absolute z-[1000] bg-zinc-900 top-[4.4rem] ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } duration-300 ease-in-out lg:translate-x-0 text-nowrap`}
       >
         <h1 className="lg:text-3xl text-2xl font-bold flex items-center">
-          <i className="ri-play-circle-fill text-[rgb(255, 255, 200))] mr-2"></i> Entertain
+          <i className="ri-play-circle-fill text-purple-600 mr-2"></i> Entertain
         </h1>
 
         <nav>
