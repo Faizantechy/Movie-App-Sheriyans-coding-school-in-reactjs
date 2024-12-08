@@ -52,13 +52,13 @@ function HorizontalCards({ title, data, Value }) {
           )}
         </div>
 
-        <div className="horizontal-cards flex overflow-x-auto w-full mt-5 space-x-5 flex-wrap">
+        <div className="horizontal-cards flex overflow-x-auto w-full mt-5 space-x-5 ">
           {/* Mapping through results */}
           {combinedArrays.map((item) => (
             <Link to={`/${item.media_type || title}/details/${item.id}`}>
               <div
                 key={item.id}
-                className="card flex-none lg:w-[300px] h-[300px] bg-black rounded-lg overflow-hidden border"
+                className="card flex-none lg:w-[300px] bg-black rounded-lg overflow-hidden border"
               >
                 {/* Using a fixed aspect ratio for images */}
                 <img
