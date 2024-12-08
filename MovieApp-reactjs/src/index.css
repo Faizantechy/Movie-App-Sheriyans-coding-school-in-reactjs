@@ -15,7 +15,9 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(15,23,42);
+  background-color: red;
+  margin-left: 10rem;
+  margin-bottom: 10rem;
 }
 
 .suggestions::-webkit-scrollbar {
