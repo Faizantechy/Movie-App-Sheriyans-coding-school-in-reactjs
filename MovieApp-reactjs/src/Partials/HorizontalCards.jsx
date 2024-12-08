@@ -58,7 +58,7 @@ function HorizontalCards({ title, data, Value }) {
             <Link to={`/${item.media_type || title}/details/${item.id}`}>
               <div
                 key={item.id}
-                className="card flex-none lg:w-[300px] w-[280px] overflow-y-auto h-[400px] bg-black rounded-lg overflow-hidden border"
+                className="card flex-none lg:w-[300px] w-[270px] overflow-y-auto h-[400px] bg-black rounded-lg overflow-hidden border"
               >
                 {/* Using a fixed aspect ratio for images */}
                 <img
@@ -73,7 +73,7 @@ function HorizontalCards({ title, data, Value }) {
                 </h2>
                 <p className="p-2">
                   {item.overview
-                    ? item.overview.slice(0, 100)
+                    ? item.overview.slice(0, 150)
                     : "Overview Not Found..."}
                 </p>
               </div>
