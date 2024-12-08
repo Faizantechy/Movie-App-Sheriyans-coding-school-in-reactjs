@@ -27,7 +27,7 @@ function SideBar() {
       <div
         className={`lg:w-[20%] w-[200px] lg:bg-transparent lg:h-[100vh] h-[80vh] lg:p-8 p-10 overflow-y-auto flex-col justify-center border lg:flex lg:static absolute z-[1000] bg-zinc-900 top-[4.4rem] ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } duration-300 ease-in-out lg:translate-x-0`}
+        } duration-300 ease-in-out lg:translate-x-0 text-nowrap`}
       >
         <h1 className="lg:text-3xl text-2xl font-bold flex items-center">
           <i className="ri-play-circle-fill text-purple-600 mr-2"></i> Entertain
