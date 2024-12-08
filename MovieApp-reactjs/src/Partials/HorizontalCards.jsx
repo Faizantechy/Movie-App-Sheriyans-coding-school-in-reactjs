@@ -52,7 +52,7 @@ function HorizontalCards({ title, data, Value }) {
           )}
         </div>
 
-        <div className="horizontal-cards flex overflow-x-auto w-full mt-5 space-x-5">
+        <div className="horizontal-cards flex overflow-x-auto w-full mt-5 space-x-5 flex-wrap">
           {/* Mapping through results */}
           {combinedArrays.map((item) => (
             <Link to={`/${item.media_type || title}/details/${item.id}`}>
