@@ -71,7 +71,7 @@ function SideBar() {
 
           <hr className="h-[2px] bg-black w-full mt-6" />
 
-          <h2 className="mt-5 font-bold text-xl">Website Information</h2>
+          <h2 className="mt-5 font-bold text-xl">Website Info</h2>
 
           <ul className="flex flex-col gap-4 text-lg ml-2 mt-4 font-semibold">
             <Link
