@@ -73,7 +73,7 @@ function HorizontalCards({ title, data, Value }) {
                 </h2>
                 <p className="p-2">
                   {item.overview
-                    ? item.overview.slice(0, 150)
+                    ? item.overview.slice(0, 170)+'.'
                     : "Overview Not Found..."}
                 </p>
               </div>
